@@ -14,16 +14,16 @@ emsdk_version = "2.0.24"
 # OBS 1: don't forget change in wasm docker file (docker/wasm/Dockerfile)
 
 # macos
-configurations_macos = ["release"]
+configurations_macos = ["debug"]
 targets_macos = [
     {"target_os": "macos", "target_cpu": "x64", "pdfium_os": "mac"},
     {"target_os": "macos", "target_cpu": "arm64", "pdfium_os": "mac"},
 ]
 
 # ios
-configurations_ios = ["release"]
+configurations_ios = ["debug"]
 targets_ios = [
-    {"target_os": "ios", "target_cpu": "arm", "pdfium_os": "ios"},
+    # {"target_os": "ios", "target_cpu": "arm", "pdfium_os": "ios"},
     {"target_os": "ios", "target_cpu": "arm64", "pdfium_os": "ios"},
     {"target_os": "ios", "target_cpu": "x64", "pdfium_os": "ios"},
 ]
