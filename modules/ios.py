@@ -441,6 +441,17 @@ def run_task_build():
             ]
             r.run_as_shell(" ".join(command))
 
+            # generate an Xcode project
+            command = [
+                "gn",
+                "gen",
+                "out/{0}-{1}-{2}".format(
+                    target["target_os"], target["target_cpu"], config
+                ),
+                "--ide=xcode",
+            ]
+            r.run_as_shell(" ".join(command))
+
             # compiling...
             l.colored(
                 'Compiling to arch "{0}" and configuration "{1}"...'.format(
